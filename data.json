@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Sample User",
+    "role": "DevOps Learner",
+    "message": "This record is loaded from data.json by the /api route."
+  },
+  {
+    "id": 2,
+    "name": "Flask Application",
+    "role": "Demo",
+    "message": "The API returns the complete JSON list."
+  }
+]

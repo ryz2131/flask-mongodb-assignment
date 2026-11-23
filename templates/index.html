@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask & MongoDB Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>Flask & MongoDB</h1>
+    <p class="intro">Submit the form to save your information in MongoDB Atlas.</p>
+
+    {% if error %}
+      <div class="alert error" role="alert">{{ error }}</div>
+    {% endif %}
+
+    <form action="{{ url_for('submit') }}" method="post">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required
+             value="{{ (form_data or {}).get('name', '') }}">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required
+             value="{{ (form_data or {}).get('email', '') }}">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required>{{ (form_data or {}).get('message', '') }}</textarea>
+
+      <button type="submit">Submit data</button>
+    </form>
+    <p class="api-link">Test the JSON API: <a href="{{ url_for('api') }}">/api</a></p>
+  </main>
+</body>
+</html>
