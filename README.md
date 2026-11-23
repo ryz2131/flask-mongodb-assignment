@@ -12,7 +12,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-cp .env.example .env
 ```
 
 Edit `.env` and replace the sample `MONGO_URI` with your MongoDB Atlas connection string. Do not commit `.env` to GitHub.
